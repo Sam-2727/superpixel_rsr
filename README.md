@@ -5,6 +5,13 @@ You will need the following non-standard packages:
 * alphashape (pip install alphashape)
 * RSR (pip install rsr)
 
+## Download instructions
+download from github, change working directory to downloaded folder, then:
+
+```
+python setup.py install
+```
+
 ## Sample code to get you started:
 
 ```python
