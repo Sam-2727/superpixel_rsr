@@ -8,7 +8,7 @@ import rsr
 import alphashape
 from shapely.geometry import Point
 from shapely import vectorized
-class SuperPixel2():
+class SuperPixel():
     def __init__(self,lon,lat,surf_amp):
         self.lon = lon
         self.lat = lat
