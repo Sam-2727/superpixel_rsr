@@ -49,6 +49,7 @@ class SuperPixel():
         lonRavel = np.ravel(self.xgrid)
         latRavel = np.ravel(self.ygrid)
         supixRavel  = np.ravel(self.superpixels)
+        rsrReturns = []
         for i in range(0,int(np.max(self.superpixels))+1):
             supixCondition  = (supixRavel==i)
             possiblePointsCondition = (self.lon<np.max(lonRavel[supixCondition]))&(self.lon>np.min(lonRavel[supixCondition]))\
@@ -65,7 +66,7 @@ class SuperPixel():
             if(lenSurfAmp<100):
                 print("only {0} points in superpixel {1},skipping!".format(lenSurfAmp,i))
                 continue
-            rsrReturn = rsr.run.processor(self.surfAmp[possiblePointsCondition][boolContains], fit_model='hk')
-            return rsrReturn
+            rsrReturns.append(rsr.run.processor(self.surfAmp[possiblePointsCondition][boolContains], fit_model='hk'))
+            return rsrReturns
     def plotSuperpixelsPower(self,nSuperpixels,xlim,ylim):
         plt.imshow(self.supixObject.average(nSuperpixels, 1, self.zgrid),origin="lower")
