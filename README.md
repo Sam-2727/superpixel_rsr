@@ -10,7 +10,7 @@ You will need the following non-standard packages:
 ```python
 
 import pandas as pd
-powerReturns = pd.read_hdf("/west_alba_mons.srf.h5")
+powerReturns = pd.read_hdf("west_alba_mons.srf.h5")
 booleanCriteria= (powerReturns["SUB_SC_EAST_LONGITUDE"]<200)&(powerReturns["SUB_SC_PLANETOCENTRIC_LATITUDE"]<40)\
                 &(powerReturns["SUB_SC_PLANETOCENTRIC_LATITUDE"]>30)&(powerReturns["SUB_SC_EAST_LONGITUDE"]>190)
 sub = powerReturns[booleanCriteria]
