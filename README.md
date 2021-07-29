@@ -3,6 +3,7 @@ You will need the following non-standard packages:
 * Shapely (pip install shapely)
 * boruvka superpixel (download here: https://github.com/semiquark1/boruvka-superpixel)
 * alphashape (pip install alphashape)
+* RSR (pip install rsr)
 
 ## Sample code to get you started:
 
