@@ -71,6 +71,13 @@ class SuperPixel():
     ----------
     parallelUnits : int
         number of threads to create for parallel execution of code.
+    Returns
+    ----------
+    length 2 list. First component is an array of longitude and latitude points, sorted by superpixel.
+    These can be accessed through an array call: returnValue[0][i][x] where i is the ith superpixel,
+    x=0 is longitude, and x=1 is latitude
+    
+    Second component is the rsrReturns corresponding to each superpixel
     """         
     def calcRSR(self,parallelUnits):
         self.rsrReturns = np.zeros(int(np.max(self.superpixels))+1,dtype=object)
@@ -104,8 +111,8 @@ class SuperPixel():
             print("only {0} points in superpixel {1},skipping!".format(lenSurfAmp,i))
             return np.nan
         self.rsrReturns[i] = (rsr.run.processor(self.surfAmp[possiblePointsCondition][boolContains], fit_model='hk'))
-        self.lonPointsReturn[i] = self.lon[possiblePointsCondition][boolContains]
-        self.latPointsReturn[i] = self.lat[possiblePointsCondition][boolContains]
+        self.lonPointsReturn[i] = np.array(self.lon[possiblePointsCondition][boolContains])
+        self.latPointsReturn[i] = np.array(self.lat[possiblePointsCondition][boolContains])
     """
     Plot superpixels over region (region is gridded power amplitude).
 
