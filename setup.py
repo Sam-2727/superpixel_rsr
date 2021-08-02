@@ -11,7 +11,7 @@ def main():
     setup(name="RSR-Superpixel",
           version="0.0.1",
           description="Superpixel implementation of RSR method",
-          author="Logan Pearce",
+          author="Sam Christian",
 		  url='https://github.com/Sam-2727/superpixel_rsr',
 		  packages =['superpixel_rsr'],
 		  zip_safe=False,
